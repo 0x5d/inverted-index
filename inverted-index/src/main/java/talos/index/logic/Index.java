@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author castillobg
  */
 public class Index {
-    private ArrayList<Integer> positions;
+    private int position;
     private int doc;
 
     /**
@@ -21,15 +21,14 @@ public class Index {
      */
     public Index(int position, int doc){
         this.doc = doc;
-        positions = new ArrayList<>();
-        positions.add(position);
+        this.position = position;
     }
     
     /**
      * @return the index
      */
-    public ArrayList getPositions() {
-        return positions;
+    public int getPosition() {
+        return position;
     }
 
     /**
@@ -42,9 +41,7 @@ public class Index {
     @Override
     public String toString(){
         String s = "";
-        for (Integer position : positions) {
-            s += "[Doc. " + doc + ", Pos. " + position + "]\n";
-        }
+        s += "(Doc. " + doc + ", Pos. " + position + ")\n";
         return s;
     }
 }

@@ -28,7 +28,7 @@ public class Word implements Comparable<Word>{
     /**
      * @return the indexes
      */
-    public ArrayList getIndexes() {
+    public ArrayList<Index> getIndexes() {
         return indexes;
     }
 

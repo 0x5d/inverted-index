@@ -25,16 +25,16 @@ public class Main {
         "Grisham's sequel to A Time to Kill is a solid courtroom drama about racial prejudice marred by a flawless white hero, writes John O'Connell", 
         "This strange repackaging of bits and pieces does the Man Booker winner no favours, says Sam Leith", 
         "Another book with music related content" 
-    }; 
+    };
     
     public static void main(String[] args){
         
         WordMap map = new WordMap(data);
         
-        String[] query = new String[]{"music","a", "b", "study"};
+        String[] query = new String[]{"Bach", "Strange"};
         ArrayList<Word> res = map.searchWords(query);
-//        for(Word word : res){
-//            System.out.println(word);
-//        }
+        for(Word word : res){
+            System.out.println(word);
+        }
     }
 }

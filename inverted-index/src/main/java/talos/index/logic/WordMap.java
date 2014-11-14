@@ -51,7 +51,7 @@ public class WordMap {
      * @return The list of words
      */
     private String[] parseDocument(String doc){
-        String[] parsedDoc = doc.split("[ ,]");
+        String[] parsedDoc = doc.replaceAll("[,]", "").split("[\\s]");
         return parsedDoc;
     }
     
@@ -65,8 +65,9 @@ public class WordMap {
         ArrayList<Word> results = new ArrayList<>();
         
         for(int i = 0; i < query.length; i++){
-            if(wordMap.containsKey(query[i])){
-                results.add(wordMap.get(query[i]));
+            String formattedStr = query[i].toLowerCase();
+            if(wordMap.containsKey(formattedStr)){
+                results.add(wordMap.get(formattedStr));
             }
         }
         

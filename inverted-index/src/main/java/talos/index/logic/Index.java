@@ -1,47 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package talos.index.logic;
 
-import java.util.ArrayList;
+package talos.index.logic;
 
 /**
  *
  * @author castillobg
  */
 public class Index {
-    private int position;
-    private int doc;
+    private final int POSITION;
+    private final int DOC;
 
     /**
-     * @param position The word's position
-     *  @param doc The doc's index
+     * @param position The word's POSITION
+     *  @param doc The DOC's index
      */
     public Index(int position, int doc){
-        this.doc = doc;
-        this.position = position;
+        this.DOC = doc;
+        this.POSITION = position;
     }
     
     /**
      * @return the index
      */
     public int getPosition() {
-        return position;
+        return POSITION;
     }
 
     /**
-     * @return the doc
+     * @return the DOC
      */
     public int getDoc() {
-        return doc;
+        return DOC;
     }
     
     @Override
     public String toString(){
         String s = "";
-        s += "(Doc. " + doc + ", Pos. " + position + ")\n";
+        s += "(Doc. " + DOC + ", Pos. " + POSITION + ")\n";
         return s;
     }
 }

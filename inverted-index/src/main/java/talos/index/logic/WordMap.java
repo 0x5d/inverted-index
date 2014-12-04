@@ -57,12 +57,19 @@ public class WordMap {
         ArrayList<Word> results = new ArrayList<>();
         
         for(int i = 0; i < query.length; i++){
-            String formattedStr = query[i].toLowerCase();
-            if(wordMap.containsKey(formattedStr)){
-                results.add(wordMap.get(formattedStr));
-            }
+        	Word res = searchWord(query[i]);
+        	if(res != null){
+        		results.add(res);
+        	}
         }
-        
         return results;
+    }
+    
+    public Word searchWord(String query){
+        String formattedStr = query.toLowerCase();
+    	if(wordMap.containsKey(formattedStr)){
+            return wordMap.get(formattedStr);
+        }
+    	return null;
     }
 }
